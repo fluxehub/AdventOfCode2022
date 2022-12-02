@@ -1,6 +1,6 @@
 # Advent Of Code 2022
 
-As my "do a random programming language every day" challenge failed last year after I ran out of free time to learn a new language each day, this year I've decided to allow any language of my choicew, with an aim to do as many languages as possible (otherwise defaulting back to a language I know well)
+As my "do a random programming language every day" challenge failed last year after I ran out of free time to learn a new language each day, this year I've decided to allow any language of my choice, with an aim to do as many languages as possible (otherwise defaulting back to a language I know well)
 
 So far:
 ## Day 1 - F#
