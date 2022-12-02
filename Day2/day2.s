@@ -180,7 +180,7 @@ part2:
 
         part2_loss:
         bl      get_loss    
-        b       part2_add_move     // No extra score for loss
+        b       part2_add_move      // No extra score for loss
 
         part2_draw:
         add     x7, x7, #3          // x0 already contains our opponent's move so we can just add the bonus
