@@ -47,58 +47,26 @@ read_file:
     ret
 
 // Converts a character to a move
-// w0: Contains the move character, can be A,B,C or X,Y,Z
-// Returns the move
-get_move:
-    sub     w0, w0, #65             // This allows ccmp to work, as the immediate must be [0, 31]
-    
-    cmp     w0, #0                  // 'A'
-    ccmp    w0, #23, 0b0100, ne     // || 'X'
-    csel    x0, rock, x0, eq        // Set x0 to rock if equal
-    beq     get_move_end            // Return
+// w0: Contains the move character
+get_opponent_move:
+    sub     w0, w0, #64             // Subtract 64 to convert A,B,C to 1,2,3
+    ret
 
-    cmp     w0, #1                  // 'B'
-    ccmp    w0, #24, 0b0100, ne     // || 'Y'
-    csel    x0, paper, x0, eq
-    beq     get_move_end
-
-    cmp     w0, #2                  // 'C'
-    ccmp    w0, #25, 0b0100, ne     // || 'Z'
-    csel    x0, scissors, x0, eq
-
-    get_move_end:
+get_our_move:
+    sub     w0, w0, #87             // Subtract 87 to convert X,Y,Z to 1,2,3
     ret
 
 // Gets the move that beats x0
 get_win:
-    cmp     x0, rock
-    csel    x0, paper, x0, eq       // Paper beats rock
-    beq     get_win_end
-
-    cmp     x0, paper
-    csel    x0, scissors, x0, eq    // Scissors beats paper
-    beq     get_win_end
-
-    cmp     x0, scissors
-    csel    x0, rock, x0, eq        // Rock beats scissors
-
-    get_win_end:
+    add     x0, x0, #1              // Winning move is next in sequence rock, paper, scisscors
+    cmp     x0, scissors            // This is slightly more complex than mod 3
+    csel    x0, rock, x0, gt        // for no real benefit
     ret
 
 // Get the move that loses to x0
 get_loss:
-    cmp     x0, rock
-    csel    x0, scissors, x0, eq    // Rock beats scissors
-    beq     get_loss_end
-
-    cmp     x0, paper
-    csel    x0, rock, x0, eq        // Paper beats rock
-    beq     get_loss_end
-
-    cmp     x0, scissors
-    csel    x0, paper, x0, eq       // Scissors beats paper
-
-    get_loss_end:
+    subs    x0, x0, #1              // Losing move is previous in sequence rock, paper, scisscors
+    csel    x0, scissors, x0, eq    // There's probably a math equation here but bounds checking is easier
     ret
 
 // Scores a round (part 1)
@@ -107,10 +75,10 @@ get_loss:
 // Returns the score
 score_round:
     PUSHLR
-    bl      get_move                // Get opponent's move
+    bl      get_opponent_move       // Get opponent's move
     mov     x2, x0                  // Save the opponent's move to x2
     mov     w0, w1                  // Get our move
-    bl      get_move                // Our move is now in x0
+    bl      get_our_move            // Our move is now in x0
     POPLR
 
     mov     x1, xzr                 // Clear x1 for storing the win/draw bonus
@@ -168,7 +136,7 @@ part2:
         ldrb    w0, [x8]            // Read the opponent's move
         cmp     w0, wzr             // Null byte, EOF
         beq     part2_end
-        bl      get_move            // Get the move for the char in w0
+        bl      get_opponent_move   // Get the move for the char in w0
         ldrb    w1, [x8, #2]        // Read our move
 
         cmp     w1, #88             // If 'X', we need to lose
