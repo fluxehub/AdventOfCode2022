@@ -3,11 +3,11 @@
 As my "do a random programming language every day" challenge failed last year after I ran out of free time to learn a new language each day, this year I've decided to allow any language of my choice, with an aim to do as many languages as possible (otherwise defaulting back to a language I know well)
 
 So far:
-## Day 1 - F#
+## (Day 1 - F#)[https://github.com/fluxehub/AdventOfCode2022/tree/main/Day1]
 
 It's a cliché choice for me for sure, but always a nice way to start out. Being day 1, it was fairly simple and I got a solution I was fairly happy with
 
-## Day 2 - ARM64 Assembly
+## (Day 2 - ARM64 Assembly)[https://github.com/fluxehub/AdventOfCode2022/tree/main/Day2]
 
 Yeah, it's a bit of a step up from day 1, but I just got a fancy new MacBook Pro 14" so why not ~~torture myself~~ have fun writing raw assembly for it? This was pretty tricky as my knowledge of ARM assembly was pretty limited, and I had certainly never done Aarch64. My solution is certainly not the most optimized assembly code, but I think it's not bad for a day of research on a platform I barely know. 
 
