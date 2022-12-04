@@ -5,7 +5,7 @@ As my "do a random programming language every day" challenge failed last year af
 So far:
 ## [Day 1 - F#](https://github.com/fluxehub/AdventOfCode2022/tree/main/Day1)
 
-It's a cliché choice for me for sure, but always a nice way to start out. Being day 1, it was fairly simple and I got a solution I was fairly happy with
+It's a cliché choice for me for sure, but always a nice way to start out. Being day 1, it was fairly simple and I got a solution I was fairly happy with.
 
 ## [Day 2 - ARM64 Assembly](https://github.com/fluxehub/AdventOfCode2022/tree/main/Day2)
 
