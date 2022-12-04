@@ -15,7 +15,7 @@ I originally planned to avoid using any library calls and just use plain syscall
 
 ## [Day 3 - C](https://github.com/fluxehub/AdventOfCode2022/tree/main/Day3)
 
-Turns out writing raw assembly is not great, so these two random guys decided to create a language with all the power of assembly with only around 80% of its verbosity and called it "C" (not to be confused with C# or C++). My solution was fine, but not having access to hashsets was painful and I didn't optimize as much as I probably could have. As for C, I'm not sure it'll catch on, I've read through all of K&R and the ISO spec and not once did I see the words "blazingly fast".
+Turns out writing raw assembly is not great, so these two random guys decided to create a language called "C" (not to be confused with C# or C++), featuring all the power of assembly with only around 80% of its verbosity. My solution was fine, but not having access to hashsets was painful and I didn't optimize as much as I probably could have. As for C, I'm not sure it'll catch on, I've read through all of K&R and the ISO spec and not once did I see the words "blazingly fast".
 
 ## [Day 4 - Siri Shortcuts](https://github.com/fluxehub/AdventOfCode2022/tree/main/Day4)
 
