@@ -1,0 +1,8 @@
+cabal-version:      2.4
+name:               Day6
+version:            0.1.0.0
+
+executable Day6
+    main-is:          Main.hs
+    build-depends:    base ^>=4.17.0.0
+    default-language: Haskell2010
