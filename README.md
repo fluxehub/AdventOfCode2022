@@ -34,3 +34,9 @@ Turns out doing complex animation in a framework you barely know is not quite as
 ## [Day 6 - Haskell](https://github.com/fluxehub/AdventOfCode2022/tree/main/Day6)
 
 Honestly nothing particularly funny or interesting here, the task was fairly simple and I needed to get other things done today. I knew the task could be concisely expressed in a functional language, and since I already did F#, Haskell was my next choice. Overall pretty happy with the solution.
+
+## [Day 7 - Go](https://github.com/fluxehub/AdventOfCode2022/tree/main/Day7)
+
+[INSERT JOKE ABOUT GO HERE]
+
+I had a lot of uni work to do so I fell behind on this task. Once I finally got the chance to implement it, it wasn't too bad, although I misread part 2 and was confused for quite a long time. I also fell for the classic blunder of actually implementing a file tree for no reason, but I wasn't about to write even more Go than I had to just to make a more optimal solution.
