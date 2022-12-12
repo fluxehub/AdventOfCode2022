@@ -40,3 +40,7 @@ Honestly nothing particularly funny or interesting here, the task was fairly sim
 [INSERT JOKE ABOUT GO HERE]
 
 I had a lot of uni work to do so I fell behind on this task. Once I finally got the chance to implement it, it wasn't too bad, although I misread part 2 and was confused for quite a long time. I also fell for the classic blunder of actually implementing a file tree for no reason, but I wasn't about to write even more Go than I had to just to make a more optimal solution.
+
+## [Day 8 - Objective-C](https://github.com/fluxehub/AdventOfCode2022/tree/main/Day8)
+
+Furthering my bizarre self-flagellation streak from Go yesterday, I decided to do Objective-C, which despite how it may appear, is in fact a real programming language. My original solution was pretty bad, with a lot of repeated code to check each direction. After finishing both parts, I realised how I could clean up the code to make it much less ugly, and I think the new solution is pretty decent all things considered. Hopefully I'll decide to use a good language tomorrow.
