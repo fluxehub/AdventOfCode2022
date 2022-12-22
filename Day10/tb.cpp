@@ -1,11 +1,12 @@
 #include "verilated.h"
 #include "verilated_vcd_c.h"
-#include "obj_dir/Vsignal_processor.h"
+#include "obj_dir/Vtop.h"
 #include "cinttypes"
 #include <algorithm>
 #include <iostream>
 
-static Vsignal_processor processor{};
+static Vtop processor{};
+static std::string display = "";
 
 void tick() {
     processor.clk = 0;
@@ -47,6 +48,16 @@ void print_state() {
 
 void step() {
     print_state();
+    if (processor.pixel_out) {
+        display += "#";
+    } else {
+        display += " ";
+    }
+
+    if (processor.cycles_out % 40 == 0) {
+        display += "\n";
+    }
+
     tick();
 }
 
@@ -59,11 +70,13 @@ int main(int argc, char **argv) {
     std::array<int, 6> notable_cycles = {20, 60, 100, 140, 180, 220};
 
     while(!processor.term_out) {
-        if (std::find(std::begin(notable_cycles), std::end(notable_cycles), processor.cycles_out) != std::end(notable_cycles)) {
+        auto in = std::find(std::begin(notable_cycles), std::end(notable_cycles), processor.cycles_out);
+        if (in != std::end(notable_cycles)) {
             sum += processor.signal_strength_out;
         }
         step();
     }
 
     std::cout << "Total: " << sum << std::endl;
+    std::cout << display << std::endl;
 }

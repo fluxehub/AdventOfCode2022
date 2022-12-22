@@ -1,10 +1,10 @@
 VERILATOR_DIR=/opt/homebrew/Cellar/verilator/5.004/share/verilator/include/
 VERILATOR_COMPILES=$(VERILATOR_DIR)/verilated.cpp $(VERILATOR_DIR)/verilated_vcd_c.cpp $(VERILATOR_DIR)/verilated_threads.cpp 
 
-TOP_MODULE=signal_processor
+TOP_MODULE=top
 
 TOP_FILE=src/day10.v
-ADDITIONAL_FILES=src/program_rom.v
+ADDITIONAL_FILES=src/signal_processor.v src/program_rom.v src/crt_controller.v
 
 INPUT_FILE=input
 

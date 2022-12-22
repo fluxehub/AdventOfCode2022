@@ -44,3 +44,15 @@ I had a lot of uni work to do so I fell behind on this task. Once I finally got 
 ## [Day 8 - Objective-C](https://github.com/fluxehub/AdventOfCode2022/tree/main/Day8)
 
 Furthering my bizarre self-flagellation streak from Go yesterday, I decided to do Objective-C, which despite how it may appear, is in fact a real programming language. My original solution was pretty bad, with a lot of repeated code to check each direction. After finishing both parts, I realised how I could clean up the code to make it much less ugly, and I think the new solution is pretty decent all things considered. Hopefully I'll decide to use a good language tomorrow.
+
+## Day 9
+
+*in progress*
+
+## [Day 10 - Verilog (+ a little C++ and Python)](https://github.com/fluxehub/AdventOfCode2022/tree/main/Day10)
+
+> Emulating a processor is boring, instead let's build it for real!
+
+\- *Me, seconds before making a tragic mistake.*
+
+I'm finally done with exams at uni, so now it's time to grind out the rest of the exercises. As the problem this time was processor emulation, and since I just finished a uni module on processor design, I decided now would be a great time to put those skills to the test (sequential logic man). Most of my time was spent on the processor itself and fixing all the weird timing edge cases I came across. I think my CRT might be bugged, but it worked enough to solve the solution so that's good enough for me. I used C++ and Verilator (because Vivado projects and Git do not mix) to run the Verilog simulations and Python to make a tiny assembler for the processor. AFAIK it should synthesize but I never tested.
